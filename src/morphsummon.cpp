@@ -477,7 +477,7 @@ private:
                     else
                     {
                         pet->SetUInt32Value(UNIT_VIRTUAL_ITEM_SLOT_ID, morphId);
-                        CharacterDatabase.Execute("REPLACE INTO `mod_morphsummon_felguard_weapon` (`PlayerGUIDLow`, `FelguardItemID`) VALUES ({}, {})", player->GetGUID().GetCounter(), morphId);
+                        CharacterDatabase.DirectExecute("REPLACE INTO `mod_morphsummon_felguard_weapon` (`PlayerGUIDLow`, `FelguardItemID`) VALUES ({}, {})", player->GetGUID().GetCounter(), morphId);
                     }
                 }
             }
